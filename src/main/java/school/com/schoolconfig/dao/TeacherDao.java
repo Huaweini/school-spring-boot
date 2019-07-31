@@ -6,7 +6,6 @@ import school.com.schoolconfig.pojo.Teacher;
 
 import java.util.List;
 
-@Mapper
 public interface TeacherDao extends BaseDataDao<Teacher> {
     Teacher selectById(Long id);
 

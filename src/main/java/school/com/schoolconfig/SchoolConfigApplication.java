@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 
 @SpringBootApplication
-@MapperScan("school.com.schoolconfig.dao")
+@MapperScan(basePackages = "school.com.schoolconfig.dao")
 public class SchoolConfigApplication {
 
     public static void main(String[] args) {
