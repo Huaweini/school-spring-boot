@@ -125,5 +125,4 @@
         SET  isDel = 1
         WHERE id = #{id}
     </update>
-
 </mapper>
