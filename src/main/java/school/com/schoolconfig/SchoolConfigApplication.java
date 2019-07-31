@@ -4,8 +4,9 @@ import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-@MapperScan("com.schoolconfig.dao")
+
 @SpringBootApplication
+@MapperScan("school.com.schoolconfig.dao")
 public class SchoolConfigApplication {
 
     public static void main(String[] args) {

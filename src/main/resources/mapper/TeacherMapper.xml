@@ -3,7 +3,7 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="school.com.schoolconfig.dao.TeacherDao">
-    <resultMap type="Teacher" id="userResultMap">
+    <resultMap type="school.com.schoolconfig.pojo.Teacher" id="userResultMap">
         <id property="id" column="id" jdbcType="INTEGER"/>
         <result property="loginName" column="login_name" jdbcType="VARCHAR"/>
         <result property="classNum" column="class_num" jdbcType="INTEGER"/>
