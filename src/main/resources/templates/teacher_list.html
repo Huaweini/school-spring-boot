@@ -101,7 +101,7 @@
 
         function myLeader(unit) {
             var ajax = {
-                url: "/user/myLeader",
+                url: "./user/myLeader",
                 data: {"unit": unit},
                 type: "post",
                 dataType: "json",
@@ -187,11 +187,11 @@
                 <div class="col-sm-6">
                     <form action="" method="post" id="searchForm">
                         <div class="input-group">
-                            <input type="text" class="form-control" name="keyword" value="${keyword}"
+                            <input th:attr="value=${keyword}" type="text" class="form-control" name="keyword"
                                    placeholder="输入关键字"/>
                             <span class="input-group-btn" style="width: 1px">
                                 <button class="btn btn-default" type="button" onclick="searchTeacher()">查询</button>
-                                <input type="hidden" id="pageNum" name="pageNum" value="${page.pageNum}"/>
+                                <input th:attr="value=${page.pageNum}" type="hidden" id="pageNum" name="pageNum"/>
                             </span>
                         </div>
                     </form>
@@ -214,7 +214,6 @@
                         </tr>
                         </thead>
                         <tbody>
-<!--                        <c:forEach var="teacher" items="${page.list}" varStatus="status">-->
                             <tr th:each="teacher:${page.list}">
                                 <td th:text="${teacher.loginName}"></td>
                                 <td th:text="${teacher.realName}"></td>
@@ -235,8 +234,8 @@
                                             data-toggle="modal" data-target="#myModal1">修改
                                     </button>
                                     <button type="button" class="btn btn-danger" onclick="del(${teacher.id})">删除</button>
-                                    <button type="button" class="btn btn-primary"
-                                            data-toggle="modal" data-target="#myModal2" onclick="myLeader('${teacher.unit}')">TA的上级
+                                    <button th:teacher-unit="${teacher.unit}" onclick="myLeader(this,this.getAttribute('teacher-unit'))" type="button" class="btn btn-primary"
+                                            data-toggle="modal" data-target="#myModal2">TA的上级
                                     </button>
                                 </td>
                             </tr>
